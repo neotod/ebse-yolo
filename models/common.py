@@ -55,6 +55,7 @@ def autopad(k, p=None, d=1):  # kernel, padding, dilation
 
 class space_to_depth(nn.Module):
     # Changing the dimension of the Tensor
+    # scale = 2
     def __init__(self, dimension=1):
         super().__init__()
         self.d = dimension
