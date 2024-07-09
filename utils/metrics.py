@@ -294,6 +294,7 @@ class WIoU_Scale:
     
 
 def bbox_iou(box1, box2, xywh=True, GIoU=False, DIoU=False, CIoU=False, SIoU=False, EIoU=False, WIoU=False, Focal=False, alpha=1, gamma=0.5, scale=False, eps=1e-7):
+    # IoU losses implementation from -> https://github.com/z1069614715/objectdetection_script/blob/master/yolo-improve/iou.py
     # Returns Intersection over Union (IoU) of box1(1,4) to box2(n,4)
 
     # Get the coordinates of bounding boxes

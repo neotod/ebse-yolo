@@ -54,7 +54,8 @@ def autopad(k, p=None, d=1):  # kernel, padding, dilation
     return p
 
 class eca_layer(nn.Module):
-    """Constructs a ECA module.
+    """An ECA (efficient channel attention) module.
+    code taken from https://github.com/BangguWu/ECANet
 
     Args:
         k_size: Adaptive selection of kernel size
@@ -78,6 +79,11 @@ class eca_layer(nn.Module):
         return x * y.expand_as(x)
 
 class space_to_depth(nn.Module):
+    """
+    spd-conv space to depth module
+    code taken from https://github.com/LabSAINT/SPD-Conv/
+    """
+
     # Changing the dimension of the Tensor
     # scale = 2
     def __init__(self, dimension=1):
