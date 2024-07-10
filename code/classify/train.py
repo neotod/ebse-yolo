@@ -50,7 +50,7 @@ from utils.torch_utils import (ModelEMA, de_parallel, model_info, reshape_classi
 LOCAL_RANK = int(os.getenv('LOCAL_RANK', -1))  # https://pytorch.org/docs/stable/elastic/run.html
 RANK = int(os.getenv('RANK', -1))
 WORLD_SIZE = int(os.getenv('WORLD_SIZE', 1))
-GIT_INFO = check_git_info()
+# GIT_INFO = check_git_info()
 
 
 def train(opt, device):
@@ -238,7 +238,7 @@ def train(opt, device):
                     'updates': ema.updates,
                     'optimizer': None,  # optimizer.state_dict(),
                     'opt': vars(opt),
-                    'git': GIT_INFO,  # {remote, branch, commit} if a git repo
+                    # 'git': GIT_INFO,  # {remote, branch, commit} if a git repo
                     'date': datetime.now().isoformat()}
 
                 # Save last, best and delete
