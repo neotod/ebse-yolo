@@ -58,4 +58,4 @@ print("YAML file 'dota_1_5.yaml' has been created successfully.")
 
 # train the model
 print('training the model')
-os.system(f"python3 train.py --data dota_1_5.yaml --cfg ./models/yolov5s__spd_conv__eca_net__bifpn.yaml --batch-size 64 --epochs 3 --sync-bn --project yolov5s__spd_conv__eca_net --name yolov5s__spd_conv__eca_net --hyp hyp.scratch_s.yaml")
+os.system(f"python3 train.py --data dota_1_5.yaml --workers 4 --cfg ./models/yolov5s__spd_conv__eca_net__bifpn.yaml --batch-size 64 --epochs 3 --sync-bn --project yolov5s__spd_conv__eca_net --name yolov5s__spd_conv__eca_net --hyp hyp.scratch_s.yaml")
