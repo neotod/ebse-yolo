@@ -3,8 +3,20 @@ from utils import dataset
 import yaml
 
 
+import torch
+
+if torch.cuda.is_available():
+    print(f"CUDA Version: {torch.version.cuda}")
+    print(f"Number of GPUs: {torch.cuda.device_count()}")
+    print(f"GPU Name: {torch.cuda.get_device_name(0)}")
+    print(f"GPU Memory: {torch.cuda.get_device_properties(0).total_memory / 1e9:.2f} GB")
+else:
+    print("No GPU available")
+print()
+
 # download dataset
 print(f'current dir: {os.getcwd()}')
+print(f'downloading the dataset...')
 dataset.download_dataset()
 print(f'after download_datasets - ./artifacts', os.listdir('./artifacts'))
 
